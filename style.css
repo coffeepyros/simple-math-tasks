@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap");
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: #f0f0f0;
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+#print {
+  background: #fff;
+  width: 21cm;
+  height: 29.7cm;
+  padding: 0.5cm;
+}
+h1 {
+  color: #33691e;
+}
