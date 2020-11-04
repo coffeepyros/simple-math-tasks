@@ -1,5 +1,6 @@
 let addition = document.getElementById("addition");
 let subtraction = document.getElementById("subtraction");
+let start = true;
 
 const nrOfTasks = 15;
 
@@ -9,11 +10,11 @@ function fillAdd() {
   for (let i = 0; i < nrOfTasks; i++) {
     let result = getRndInteger(2, 100);
     let x = getRndInteger(1, result - 1);
-    tasks.push({x: x, y: result-x, op: "+"})
-    // addFormula(x, result - x, "+");
+    let data = { x: x, y: result - x, op: "+" };
+    if (start === true) tasks.push(data);
+    else if (isTaskUnique(data, tasks)) tasks.push(data);
   }
   addTasks(tasks);
-  console.log(tasks)
 }
 
 function fillSub() {
@@ -25,14 +26,21 @@ function fillSub() {
     do {
       y = getRndInteger(1, x);
     } while (x === y);
-    tasks.push({x: x, y: y, op: "-"})
+    let data = { x: x, y: y, op: "-" };
+    if (start === true) tasks.push(data);
+    else if (isTaskUnique(data, tasks)) tasks.push(data);
   }
   addTasks(tasks);
-  console.log(tasks)
+}
+
+function isTaskUnique(data, tasks) {
+  let copy = tasks.filter((task) => task.x === data.x && task.y === data.y);
+  if (copy.length === 0) return true;
+  else return false;
 }
 
 function addTasks(tasks) {
-  tasks.map((task)=> {
+  tasks.map((task) => {
     let p = document.createElement("p");
     p.innerText = task.x + " " + task.op + " " + task.y + " =";
     if (task.op === "+") addition.append(p);
@@ -45,5 +53,7 @@ function getRndInteger(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+// FIRST PAGE LOAD
 fillAdd();
 fillSub();
+start = false;
