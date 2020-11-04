@@ -20,14 +20,14 @@ header {
   height: 29.7cm;
   padding: 1cm 2cm;
   font-size: 18pt;
-  line-height: 3em;
+  line-height: 2.67em;
 }
 #print h2 {
   font-size: 24pt;
   display: inline-block;
 }
 #print h3 {
-  margin: 1em 0 0.5em 0;
+  margin: 1rem 0 0.5rem 0;
   font-size: 21pt;
   display: inline-block;
 }
@@ -58,6 +58,9 @@ button[onclick="print()"] {
   background-color: #ffc107;
 }
 @media print {
+  body {
+    background-color: #fff;
+  }
   button {
     display: none;
   }
