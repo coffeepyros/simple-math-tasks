@@ -7,10 +7,17 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <header>
-      <h1>Einfache Mathe-Aufgaben</h1>
-    </header>
-    <div id="print"></div>
+    <div id="print">
+      <h2>Matheaufgaben</h2>
+      <button onclick="print()">Drucken</button>
+      <br />
+      <h3>Addition</h3>
+      <button onclick="fillAdd()">neue zufällige Aufgaben</button>
+      <section id="addition"></section>
+      <h3>Subtraktion</h3>
+      <button onclick="fillSub()">neue zufällige Aufgaben</button>
+      <section id="subtraction"></section>
+    </div>
     <script src="./script.js"></script>
   </body>
 </html>

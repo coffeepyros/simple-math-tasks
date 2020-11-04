@@ -1,19 +1,64 @@
-@import url("https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Roboto:wght@400;700&display=swap");
 * {
+  margin: 0;
+  padding: 0;
+  border: 0;
   box-sizing: border-box;
 }
 body {
-  margin: 0;
   background: #f0f0f0;
   display: grid;
-  grid-template-columns: auto 1fr;
+  justify-items: center;
+}
+header {
+  padding: 1rem;
 }
 #print {
+  font-family: "Comic Neue", cursive;
   background: #fff;
   width: 21cm;
   height: 29.7cm;
-  padding: 0.5cm;
+  padding: 1cm 2cm;
+  font-size: 18pt;
+  line-height: 3em;
 }
-h1 {
-  color: #33691e;
+#print h2 {
+  font-size: 24pt;
+  display: inline-block;
+}
+#print h3 {
+  margin: 1em 0 0.5em 0;
+  font-size: 21pt;
+  display: inline-block;
+}
+section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  letter-spacing: 1pt;
+}
+button {
+  background-color: #8bc34a;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  padding: 0.67em 1em;
+  border-radius: 0.5em;
+  box-shadow: 0.25em 0.25em 0 #999;
+  cursor: pointer;
+  margin-left: 1rem;
+}
+button:hover {
+  background-color: #9ccc65;
+}
+button:active {
+  background-color: #7cb342;
+  transform: translate(0.125em, 0.125em);
+  box-shadow: 0.125em 0.125em 0 #666;
+}
+button[onclick="print()"] {
+  background-color: #ffc107;
+}
+@media print {
+  button {
+    display: none;
+  }
 }
